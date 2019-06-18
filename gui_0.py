@@ -20,6 +20,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         QMainWindow.__init__(self)
 
+        # Making window
         self.setMinimumSize(QSize(400, 150))    
         self.setWindowTitle("Linkedin Scraper") 
 

@@ -80,3 +80,4 @@ if __name__ == "__main__":
 	user_query = reqest_query_from_user()
 	url = format_url(user_query)
 	scrape(url)
+
