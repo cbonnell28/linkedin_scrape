@@ -153,8 +153,13 @@ class MainWindow(QMainWindow):
 			insertion_date = dateutil.parser.parse(days_posted)
 			print("Insertion date: " + str(insertion_date))
 
-			oldest_permitted_date = datetime.today() - timedelta(days = int(search_query['days_since_posting']))
-			print("Oldest permitted date: " + str(oldest_permitted_date))
+			print("Days since posting: " + search_query['days_since_posting'])
+			try:
+				oldest_permitted_date = datetime.today() - timedelta(days = int(search_query['days_since_posting']))
+				print("Oldest permitted date: " + str(oldest_permitted_date))
+			except ValueError:
+				oldest_permitted_date = datetime.today() - timedelta(days = 28)
+				print("Oldest permitted date: " + str(oldest_permitted_date))
 
 			if insertion_date > oldest_permitted_date:
 				# print("job_company: " + job_company)
