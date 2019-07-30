@@ -3,6 +3,7 @@
 import sys
 import datetime
 import dateutil.parser
+import os
 
 from PyQt5 import QtCore, QtWidgets
 from PyQt5.QtWidgets import QMainWindow, QWidget, QLabel, QLineEdit, QComboBox, QCheckBox
@@ -15,7 +16,7 @@ from datetime import datetime, timedelta
 search_query = {
 	'search': '',
 	'days_since_posting': '',
-	'file_name': '',
+	'file_name': 'companies',
 	'location': 'desktop',
 	'semester': '',
 	'coop': '',
@@ -173,7 +174,7 @@ class MainWindow(QMainWindow):
 
 	def scrape(self, url):
 
-		filename = "companies.csv"
+		filename = search_query['file_name']
 		file = open(filename, "w")
 
 		header = "Company,Position,Link\n"
