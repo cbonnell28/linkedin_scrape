@@ -1,5 +1,4 @@
 *.csv
-*.spec
 *.csv#
 __pycache__/
 build/
